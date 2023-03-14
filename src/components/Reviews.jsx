@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react"
+import { getReviews } from "../utils/api"
 function Reviews () {
     const [reviews, setReviews] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetch(`https://board-games-seo7.onrender.com/api/reviews`)
-        .then((res) => res.json())
+        setIsLoading(true)
+        getReviews()
         .then((data) => 
         setReviews(data))
-        ;
+        setIsLoading(false)
     }, [])
 
     return (
         <main>
-            <ul className="review__list">
+            <h2>Reviews</h2>
+            {isLoading ? (
+                <p>Loading...</p>
+            ) : (
+                <ul className="review__list">
             {reviews.map((review) => {
                 return (
                     <li key={review.review_id} className="individual__review">
@@ -41,8 +47,9 @@ function Reviews () {
                     </div>
                     </li>
                     )
-            })}
+                })}
             </ul>
+                )}
         </main>
     )
 }
