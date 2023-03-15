@@ -28,9 +28,14 @@
   /* float: left;*/
   border-style:solid;
 }
+
+.individual__review > span img {
+  object-fit: cover;
+}
 .review__img {
   float: left;
+  object-fit: cover;
+  width: 50%;
+  height: 100%;
 }
-.individual__review__text{
-  /* display: inline; */
-}
+
