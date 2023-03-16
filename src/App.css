@@ -29,14 +29,14 @@
   border-style:solid;
 }
 
-.individual__review > span img {
+.individual__review img {
   object-fit: cover;
 }
 .review__img {
   float: left;
   object-fit: cover;
   width: 50%;
-  height: 100%;
+ max-height: 350px;
 }
 
 .individual__comment {
