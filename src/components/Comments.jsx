@@ -46,10 +46,7 @@ function Comments () {
     </article>
     </li>
         )}
-        <h2>Comments</h2>
-        {isLoading ? (
-            <h2>Loading...</h2>
-        ) : (
+        <h2>Comments</h2>   
             <ul className="comments__list">
         {comments.map((comment) => {
             return (
@@ -65,7 +62,6 @@ function Comments () {
         })}
         <button onClick={() => navigate(-1)}>Back to review</button>
         </ul>
-        )}
     </main>
     )
 }
