@@ -26,7 +26,9 @@ return (
         <p>{review.review_body}</p>
         <p>created at: {review.created_at}</p>
         <br/>
+        <Link to={`/reviews/${review.review_id}/comments`}>
         <p>Comments: {review.comment_count}</p>
+        </Link>
         <p>votes: {review.votes}</p>   
         </div>
     </article>
