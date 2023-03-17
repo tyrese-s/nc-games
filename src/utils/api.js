@@ -27,3 +27,22 @@ export const voteForReview = (review_id) => {
         return data
     })
 }
+
+export const postCommentForReview = (review_id, postComment) => {
+    console.log(review_id, postComment);
+    return reviewsApi.post(`/reviews/${review_id}/comments`, postComment)
+    .then(({ data }) => {
+        console.log(data);
+        return data
+    })
+    .catch((err)=> {
+        console.log(err);
+    })
+}
+
+export const getUsers = () => {
+    return reviewsApi.get(`/users`).then(({ data }) => {
+        console.log(data);
+        return data
+    })
+}
