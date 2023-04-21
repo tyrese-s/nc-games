@@ -8,9 +8,7 @@ const UserCard = ({ user }) => {
     const navigate = useNavigate()
     const onclick = () => {
         setUser(user)
-
-        const path = '/reviews'
-        navigate(path)
+        navigate('/reviews')
     }
 
 return (
