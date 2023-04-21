@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 10px 10%;
 }
 
 .App-header {
@@ -11,6 +12,18 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.nav_bar {
+  display: flex;
+  align-items: center
+}
+
+.nav_button {
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(255, 17, 0);
+  margin: 0px 10px;
 }
 
 .review__list{
@@ -27,6 +40,8 @@
   list-style-type: none;
   /* float: left;*/
   border-style:solid;
+  border-radius: 10px;
+  margin: 10px 0px;
 }
 
 .individual__review img {
