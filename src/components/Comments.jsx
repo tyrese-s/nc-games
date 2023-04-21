@@ -38,7 +38,6 @@ function Comments () {
     const handleSubmit = (event) => {
         setFormSubmitted(false)
         event.preventDefault()
-        console.log(loggedInUser);
         setNewComment({
             username: loggedInUser,
             body: newComment.body
@@ -48,8 +47,6 @@ function Comments () {
     }
 
      const handleChange = (event) => {
-        //  setNewComment(event.target.value)
-        console.log(event.target.value);
         const name = event.target.name
         const value = event.target.value
         setNewComment(values => ({...values, username: loggedInUser, [name]: value}))
@@ -92,7 +89,7 @@ function Comments () {
             <ul className="comments__list">
         {comments.map((comment) => {
             return (
-                <section>
+                <section key={comment.comment_id}>
                 <li key={comment.comment_id} className="individual__comment">
                     <article>
                         <h3>{comment.author}</h3>
