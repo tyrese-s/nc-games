@@ -11,6 +11,8 @@ const UserCard = ({ user }) => {
         navigate('/reviews')
     }
 
+    console.log(loggedInUser);
+
 return (
     <main>
     <li className="user__card">
