@@ -1,12 +1,16 @@
 import { useContext } from "react"
 import { UserContext } from "../context/User"
+import { useNavigate } from "react-router-dom"
 
-const UserCard = ({user}) => {
+const UserCard = ({ user }) => {
     const { user: loggedInUser, setUser } = useContext(UserContext)
-    console.log(loggedInUser);
 
+    const navigate = useNavigate()
     const onclick = () => {
         setUser(user)
+
+        const path = '/reviews'
+        navigate(path)
     }
 
 return (

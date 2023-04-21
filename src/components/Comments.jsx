@@ -81,9 +81,9 @@ function Comments () {
                         <label htmlFor="username">Username: {loggedInUser} </label>
                         {/* <input type="text" id="username" name="username" disabled value={newComment.username || ""} onChange={handleChange} /> */}
                         <label htmlFor="body">Comment: </label>
-                        <input type="text" id="body" name="body" value={newComment.body || ""} onChange={handleChange}/>
+                        <textarea type="text" id="body" name="body" required value={newComment.body || ""} onChange={handleChange}/>
                         <button >comment</button>
-                        {formSubmitted ? (
+                        {formSubmitted && loggedInUser ? (
                             <p>comment submitted!</p>
                         ) : (
                             <p></p>

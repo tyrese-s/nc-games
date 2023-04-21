@@ -42,7 +42,6 @@ export const postCommentForReview = (review_id, postComment) => {
 
 export const getUsers = () => {
     return reviewsApi.get(`/users`).then(({ data }) => {
-        console.log(data);
         return data
     })
 }
