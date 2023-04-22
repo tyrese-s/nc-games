@@ -57,28 +57,27 @@ function Comments () {
           {isLoading ? (
               <h2>Loading...</h2>
         ) :(
-            <li key={review_id} >
-            <article className="individual__review">
-            <img src={review.review_img_url} alt="review img" className="review__img"/>
+            <article className="single__review" key={review_id}>
+            <img src={review.review_img_url} alt="review img" className="single__img"/>
             <div className="individual__review__text">
             <h3>{review.title}</h3>
             <h4>game designer: {review.designer}</h4>
             <br/>
             <h5>review author: {review.owner}</h5>
             <p>{review.review_body}</p>
-            <p>created at: {review.created_at}</p>
+            {/* <p>created at: {review.created_at}</p> */}
             <br/>
             <p>votes: {review.votes}</p>   
             </div>
     </article>
-    </li>
         )}
         <h2>Comments</h2>   
                     <form className="comment__post" onSubmit={handleSubmit}>
                         <label htmlFor="username">Username: {loggedInUser} </label>
+                        <br/>
                         {/* <input type="text" id="username" name="username" disabled value={newComment.username || ""} onChange={handleChange} /> */}
                         <label htmlFor="body">Comment: </label>
-                        <textarea type="text" id="body" name="body" required value={newComment.body || ""} onChange={handleChange}/>
+                        <textarea type="text" id="comment_box" name="body" required value={newComment.body || ""} onChange={handleChange}/>
                         <button >comment</button>
                         {formSubmitted && loggedInUser ? (
                             <p>comment submitted!</p>
@@ -95,7 +94,7 @@ function Comments () {
                         <h3>{comment.author}</h3>
                         <p>{comment.body}</p>
                         <p>votes: {comment.votes}</p>
-                        <p>{comment.created_at}</p>
+                        {/* <p>{comment.created_at}</p> */}
                     </article>
                 </li>
                 </section>

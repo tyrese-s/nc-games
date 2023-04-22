@@ -26,26 +26,24 @@ function SingleReview () {
 return (
     // <p>from ReviewCard, i am review {review_id}</p>
 
-    <li key={review.review_id} >
-    <article className="individual__review">
-        <img src={review.review_img_url} alt="review img" className="review__img"/>
+    <div className="single__review">
+        <img src={review.review_img_url} alt="review img"/>
         <div className="individual__review__text">
         <h3>{review.title}</h3>
         <h4>game designer: {review.designer}</h4>
         <br/>
         <h5>review author: {review.owner}</h5>
         <p>{review.review_body}</p>
-        <p>created at: {review.created_at}</p>
+        {/* <p>created at: {review.created_at}</p> */}
         <br/>
         <Link to={`/reviews/${review.review_id}/comments`}>
-        <p>Comments: {review.comment_count}</p>
+        <p className="comment_button">See Comments </p>
         </Link>
         <p>votes: {review.votes + userVote}</p>
         <button onClick={onclickVotes} disabled={userVote !== 0}>vote</button>
         {isVotingErr && <p>voting error! Try again</p>}   
         </div>
-    </article>
-    </li>
+    </div>
 )
 }
 

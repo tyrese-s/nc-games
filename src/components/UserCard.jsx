@@ -18,7 +18,7 @@ return (
     <li className="user__card">
         <h2>{user.username}</h2>
         <button className="user__button" onClick={onclick}>log me in</button>
-        <img src={user.avatar_url} alt={`profile of ${user.username}`} />
+        <img src={user.avatar_url} alt={`profile of ${user.username}`} className="user__card__img" />
     </li>
     </main>
 )

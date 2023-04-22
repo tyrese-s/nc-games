@@ -24,22 +24,23 @@ function Reviews () {
             {reviews.map((review) => {
                 return (
                     <li key={review.review_id} className="individual__review">
-                    <article >
-                        <img src={review.review_img_url} alt="review img" className="review__img"/>
-                        <div className="individual__review__text">
+                        <article >
                             <Link to={`/reviews/${review.review_id}`}>
-                        <h3>{review.title}</h3>
+                            <img src={review.review_img_url} alt="review img" className="review__img"/>
+                            <div className="individual__review__text">
+                            <h3>{review.title}</h3>
+                            <h4>game designer: {review.designer}</h4>
+                            <br/>
+                            <h5>review author: {review.owner}</h5>
+                            {/* <p>created at: {review.created_at}</p> */}
+                            <br/>
+                            <p>Comments: {review.comment_count}</p>
+                            <p>votes: {review.votes}</p>
+                            <p>See full review and comments</p>   
+                            </div>
                             </Link>
-                        <h4>game designer: {review.designer}</h4>
-                        <br/>
-                        <h5>review author: {review.owner}</h5>
-                        <p>created at: {review.created_at}</p>
-                        <br/>
-                        <p>Comments: {review.comment_count}</p>
-                        <p>votes: {review.votes}</p>   
-                        </div>
-                    </article>
-                    </li>
+                        </article>
+                        </li>
                     )
                 })}
             </ul>
